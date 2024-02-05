@@ -10,33 +10,26 @@ import AuthenticationServices
 
 struct LoginView: View {
     
-    //MARK: Creating Variables  -----------------------------------------------------------------------------------------------------
+//MARK: Creating Variables
+    
     @State private var email = ""
     @State private var password = ""
-    //Allowing Dark mode for the sign-in with apple button
-    @Environment(\.colorScheme) var colorScheme
-    
-    //Caching the data
-    @AppStorage("email") var Appleemail: String = ""
-    @AppStorage("firstName") var firstName: String = ""
-    @AppStorage("lastName") var lastName: String = ""
-    @AppStorage("userId") var userId: String = ""
-    
-    
     
     
     var body: some View {
         NavigationStack{
             VStack{
 
-                //MARK: Adding Logo -----------------------------------------------------------------------------------------------------
+                
+//MARK: Adding Logo
                 //Image
                 Text("Logo")
                     .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 120)
                     .padding(.vertical ,32)
                 
                 
-                //MARK: Form Fields  -----------------------------------------------------------------------------------------------------
+//MARK: Form Fields
+                
                 //form fields
                 VStack(spacing: 24){
                     InputView(text: $email, title: "Email Address", placeHolder: "name@example.com")
@@ -64,10 +57,7 @@ struct LoginView: View {
                 .cornerRadius(5)
                 .padding(.top,28)
                 .padding(.vertical)
-                
-                
-                
-                
+
                 HStack{
                     Rectangle()
                         .frame(width: (UIScreen.main.bounds.width / 2 ) - 40  , height: 0.5)
@@ -80,14 +70,12 @@ struct LoginView: View {
                     Rectangle()
                         .frame(width: (UIScreen.main.bounds.width / 2) - 40 , height: 0.5)
                         .foregroundColor(.gray)
-                    
-                    
-                    
-                }//HStack
-                //MARK: Sign-in with Apple  -----------------------------------------------------------------------------------------------------
-                
-               
 
+                }//HStack
+                
+
+                //MARK: Sign-in with Apple
+                SignInWithApple()
                 Spacer()
                 
                 //sign up button

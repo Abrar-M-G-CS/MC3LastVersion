@@ -23,8 +23,9 @@ struct FavView: View {
             }.listStyle(PlainListStyle())
                 .navigationBarTitle("مفضلاتي", displayMode: .inline )
             
-        }
+        }  .environment(\.layoutDirection,.leftToRight)
     }
+        
 }
 
 

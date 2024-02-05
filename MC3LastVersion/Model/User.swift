@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserModel: Identifiable, Codable {
+struct User: Identifiable, Codable {
     let id: String
     let fullName: String
     let email: String
@@ -27,6 +27,7 @@ struct UserModel: Identifiable, Codable {
     }//initias
 }//UserModel
 
-extension UserModel {
-    static var MOCK_User = UserModel(id: NSUUID().uuidString, fullName: "Jane Doe", email: "JaneDoe@gmail.com")
+//Mock_Users
+extension User {
+    static var MOCK_User = User(id: NSUUID().uuidString, fullName: "محمد يوسف", email: "mohammed@gmail.com")
 }

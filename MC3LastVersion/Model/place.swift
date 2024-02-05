@@ -24,7 +24,7 @@ enum placeKeys: String {
     case category
 }
 
-struct PlaceModel {
+struct place{
     var recordID: CKRecord.ID?
     let name: String
 //    let minPrice: Int
@@ -41,7 +41,7 @@ struct PlaceModel {
     
 }
 
-extension PlaceModel {
+extension place {
     init?(record: CKRecord){
         guard let name = record[placeKeys.name.rawValue] as? String,
 //              let minPrice = record[placeKeys.minPrice.rawValue] as? Int,
@@ -63,7 +63,7 @@ extension PlaceModel {
         
     }
 }
-extension PlaceModel {
+extension place {
     
     var record: CKRecord{
         let record = CKRecord(recordType: placeKeys.type.rawValue)
